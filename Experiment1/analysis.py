@@ -333,8 +333,9 @@ def performance(mean_diff_sim, yaw_rates, participant, axes, plot = True):
                 continue
             sign =np.sign(mean_diff_real[c,3][0])
 
-        
+
             fr = scipy.interpolate.interp1d(mean_diff_real[c,1], mean_diff_real[c,3:5], axis = 0, fill_value = np.nan, bounds_error = False)
+
             trajr = fr(inds)
             f = scipy.interpolate.interp1d(mean_diff_sim[c,1], mean_diff_sim[c,3:5], axis = 0, fill_value = np.nan, bounds_error = False)
             traj = f(inds)

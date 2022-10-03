@@ -324,6 +324,7 @@ def main(gain, smooth, th, gaze_targ, pure):
                 if sign > 0:
                     car_sim = car.Car(car_pos[i, 0], car_pos[i, 1], yaw2[i,1])
 
+                car_sim.rotdt = -df['yawrate'][i]
                 #car_sim = car.Car(car_pos[i, 0], car_pos[i, 1], np.pi + np.deg2rad(6))
                 #if sign > 0:
                 #    car_sim = car.Car(car_pos[i, 0], car_pos[i, 1], np.pi*2 - np.deg2rad(12))
